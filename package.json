@@ -1,0 +1,24 @@
+{
+  "name": "whatsapp-respond-app",
+  "version": "1.0.0",
+  "description": "An App that could be used to respond a specific chat with a specific respond",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js --trace-warnings",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Muhammad Nazhim Maulana",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "path": "^0.12.7",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0",
+    "socket.io": "^4.8.1",
+    "whatsapp-web.js": "^1.27.0"
+  }
+}
