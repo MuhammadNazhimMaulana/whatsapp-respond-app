@@ -12,7 +12,7 @@ class MessageController{
 
             // Getting Contacts
             const contacts = await client.getContacts()
-            return ResponseBulider.success(res, contacts);
+            return ResponseBulider.success(res, typeof  contacts[0].name);
 
         } catch (error) {
             // If Error
@@ -23,15 +23,15 @@ class MessageController{
     // Contact View
     contacts_view = async (req, res) => {
         try {
-            // const client = req.data_client;
+            const client = req.data_client;
 
-            // // Getting Contacts
-            // const contacts = await client.getContacts()
-            // return ResponseBulider.success(res, contacts);
+            // Getting Contacts
+            const contacts = await client.getContacts()
 
             return res.render('contact', {
                 layout: 'layouts/main',
-                title: 'Halaman Kontak'
+                title: 'Halaman Kontak',
+                contacts
             });
 
         } catch (error) {
