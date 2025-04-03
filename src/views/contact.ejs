@@ -1,11 +1,40 @@
 <div class="row mt-3">
     <!-- Title -->
-    <div class="col-md-12 text-center">
+    <div class="col-md-12 text-center mb-5">
         <h1>Data Kontak</h1>
     </div>
     
     <!-- Text Area For Showing Information -->
     <div class="col-md-12">
-        
+        <table class="table table-stripped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nomor HP</th>
+                <th scope="col">Nama Kontak</th>
+              </tr>
+            </thead>
+            <tbody>
+                <!-- Looping -->
+                <% contacts.forEach((contact, index) => { index++ %>  
+                    <tr>
+                        <th scope="row"><%= index++ %></th>
+                        <td><%= contact.number %></td>
+                        <% if (contact.name != "") { %>
+                            <td>
+                                <!-- Real Data -->
+                                <%= contact.name %>
+
+                                <!-- After Checking -->
+                                <% if (typeof contact.name == "undefined") { %>
+                                    Kontak Belum di Simpan
+                                <% } %>
+                            </td>
+                        <% } %>
+                    </tr>
+                <% }) %>
+
+            </tbody>
+          </table>
     </div>
 </div>
